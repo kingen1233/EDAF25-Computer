@@ -7,6 +7,7 @@ public class Computer {
 
 	private Memory memory;
 	private Program program;
+	private ProgramCounter pc;
 
 	public Computer(Memory memory) {
 
@@ -22,6 +23,6 @@ public class Computer {
 
 	public void run() {
 		
-		program.run(memory);
+		program.run(memory, pc);
 	}
 }
