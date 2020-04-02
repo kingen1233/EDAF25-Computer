@@ -6,7 +6,7 @@ import data.Data;
 import data.Memory;
 import data.Word;
 
-public class JumpEq implements Instruction {
+public class JumpEq extends Instruction {
 	private int index;
 	private Data d1, d2;
 
@@ -16,23 +16,15 @@ public class JumpEq implements Instruction {
 		this.d2 = d2;
 	}
 
-	private void checkIfEqual(T obj1, T obj2) {
+	private <T> boolean checkIfEqual(T obj1, T obj2) {
 		return obj1.equals(obj2);
 	}
 
 	@Override
-	public void execute(Memory memory, ProgramCounter pc) {
-		T word1, word2;
-		if (d1 instanceof Address) {
-			word1 = memory.getWord(d1).DATA;
-		} else {
-			word1 = d1.DATA;
-		}
-		if (d2 instanceof Address) {
-			word2 = memory.getWord(d2).DATA;
-		} else {
-			word2 = d2.DATA;
-		}
+	public <T> void execute(Memory memory, ProgramCounter pc) {
+		T word1 = getData(d1, memory);
+		T word2 = getData(d2, memory);
+
 		if (checkIfEqual(word1, word2)) {
 			pc.set(index);
 		} else {

@@ -5,7 +5,7 @@ import data.Address;
 import data.Data;
 import data.Memory;
 
-public class Copy implements Instruction {
+public class Copy extends Instruction {
 
 	private Data d;
 	private Address a;
@@ -18,13 +18,8 @@ public class Copy implements Instruction {
 	}
 
 	@Override
-	public void execute(Memory memory, ProgramCounter pc) {
-		T word;
-		if (d instanceof Address) {
-			word = memory.getWord(d).DATA;
-		} else {
-			word = d.DATA;
-		}
+	public <T> void execute(Memory memory, ProgramCounter pc) {
+		T word = getData(d, memory);
 
 		memory.setWord(a, word);
 		pc.next();

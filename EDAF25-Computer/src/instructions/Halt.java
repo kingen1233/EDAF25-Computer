@@ -3,9 +3,9 @@ package instructions;
 import computer.ProgramCounter;
 import data.Memory;
 
-public class Halt implements Instruction {
+public class Halt extends Instruction {
 
-	Integer action;
+	private Integer action;
 
 	public Halt() {
 		this.action = -1;
