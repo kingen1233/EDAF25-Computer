@@ -1,15 +1,22 @@
 package instructions;
 
-public class Print implements Instruction {
+import computer.ProgramCounter;
+import data.Address;
+import data.Data;
+import data.Memory;
 
-	public Print() {
-		// TODO Auto-generated constructor stub
+public class Print extends Instruction {
+	private Data d;
+
+	public Print(Data d1) {
+		this.d = d1;
 	}
 
 	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
-
+	public <T> void execute(Memory memory, ProgramCounter pc) {
+		T word = getData(d, memory);
+		System.out.println(word);
+	  
 	}
 
 }
