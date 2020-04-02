@@ -8,23 +8,15 @@ import instructions.Instruction;
 
 public class Program extends ArrayList<Instruction> {
 
-	private int pc = 0;
-
 	public Program() {
 
 	}
 
-	public void run(Memory memory) {
+	public void run(Memory memory, ProgramCounter pc) {
 
-		for (; pc < size(); pc++) {
-
-			Instruction instr = get(pc);
-			instr.execute(memory, pc);
-
-			if (pc == -1) {
-				System.out.println("Instruction Halt executed, program terminating");
-				break;
-			}
+		while(pc.get() != -1) {
+			
+			get(pc.get()).execute(memory, pc);
 		}
 
 	}

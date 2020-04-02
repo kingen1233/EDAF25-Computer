@@ -1,8 +1,10 @@
 package instructions;
 
+import computer.ProgramCounter;
+import data.Memory;
+
 public interface Instruction {
 
-	
-	public void execute(); //Tror att denna ska vara void, ska eventuellt ha parametrar in
+	public void execute(Memory memory, ProgramCounter pc);
 
 }
