@@ -21,7 +21,7 @@ public class Mul extends Instruction {
 		T word1 = getData(d1, memory);
 		T word2 = getData(d2, memory);
 		
-		Word<T> newWord = new Word<T>(word1 + word2);
+		Word<T> newWord = new Word<T>(word1*word2);
 		memory.setWord(a, newWord);
 		pc.next();
 
