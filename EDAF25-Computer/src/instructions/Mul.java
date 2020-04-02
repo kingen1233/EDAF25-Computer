@@ -3,7 +3,7 @@ package instructions;
 import computer.*;
 import data.*;
 
-public class Mul implements Instruction {
+public class Mul extends Instruction {
 
 	private Data d1;
 	private Data d2;
@@ -14,31 +14,19 @@ public class Mul implements Instruction {
 		this.d2 = d2;
 		this.a = a;
 	}
-
+	
 	@Override
 	public <T> void execute(Memory memory, ProgramCounter pc) {
 
-		T word1;
-		T word2;
-
-		if (d1 instanceof Address) {
-			word1 = memory.getWord(d1).DATA;
-		} 
-		else {
-			word1 = d1.DATA;
-		}
-
-		if (d2 instanceof Address) {
-			word2 = memory.getWord(d2).DATA;
-		} 
-		else {
-			word2 = d2.DATA;
-		}
+		T word1 = getData(d1, memory);
+		T word2 = getData(d2, memory);
 		
 		Word<T> newWord = new Word<T>(word1 + word2);
 		memory.setWord(a, newWord);
 		pc.next();
 
 	}
+
+	
 
 }

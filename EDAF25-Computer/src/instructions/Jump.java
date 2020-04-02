@@ -1,11 +1,13 @@
-	package instructions;
+package instructions;
 
 import computer.ProgramCounter;
 import data.Memory;
 
-public class Jump implements Instruction {
-    private int index;
-	public Jump(int index) {
+public class Jump extends Instruction {
+	
+    private Integer index;
+    
+	public Jump(Integer index) {
 		this.index = index;
 	}
 
