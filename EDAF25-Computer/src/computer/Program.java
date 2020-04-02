@@ -19,7 +19,7 @@ public class Program extends ArrayList<Instruction> {
 		for (; pc < size(); pc++) {
 
 			Instruction instr = get(pc);
-			instr.execute();
+			instr.execute(memory, pc);
 
 			if (pc == -1) {
 				System.out.println("Instruction Halt executed, program terminating");
