@@ -18,7 +18,7 @@ public class Copy implements Instruction {
 	}
 
 	@Override
-	public void execute(Memory memory, ProgramCounter pc) {
+	public <T> void execute(Memory memory, ProgramCounter pc) {
 		T word;
 		if (d instanceof Address) {
 			word = memory.getWord(d).DATA;

@@ -16,20 +16,20 @@ public class Mul implements Instruction {
 	}
 
 	@Override
-	public void execute(Memory memory, ProgramCounter pc) {
+	public <T> void execute(Memory memory, ProgramCounter pc) {
 
 		T word1;
 		T word2;
 
 		if (d1 instanceof Address) {
-			word1 = memory.getWord(d1);
+			word1 = memory.getWord(d1).DATA;
 		} 
 		else {
 			word1 = d1.DATA;
 		}
 
 		if (d2 instanceof Address) {
-			word2 = memory.getWord(d2);
+			word2 = memory.getWord(d2).DATA;
 		} 
 		else {
 			word2 = d2.DATA;

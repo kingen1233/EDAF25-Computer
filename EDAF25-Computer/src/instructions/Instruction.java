@@ -1,10 +1,10 @@
 package instructions;
 
 import computer.ProgramCounter;
+import data.Data;
 import data.Memory;
 
 public interface Instruction {
-  
-	public void execute(Memory memory, ProgramCounter pc);
 
+	public <T> void  execute(Memory memory, ProgramCounter pc);
 }

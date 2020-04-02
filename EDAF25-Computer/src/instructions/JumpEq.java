@@ -16,12 +16,12 @@ public class JumpEq implements Instruction {
 		this.d2 = d2;
 	}
 
-	private void checkIfEqual(T obj1, T obj2) {
+	private <T> boolean checkIfEqual(T obj1, T obj2) {
 		return obj1.equals(obj2);
 	}
 
 	@Override
-	public void execute(Memory memory, ProgramCounter pc) {
+	public <T> void execute(Memory memory, ProgramCounter pc) {
 		T word1, word2;
 		if (d1 instanceof Address) {
 			word1 = memory.getWord(d1).DATA;

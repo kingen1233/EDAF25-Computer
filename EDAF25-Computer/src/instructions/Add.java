@@ -17,7 +17,7 @@ public class Add implements Instruction {
 	}
 
 	@Override
-	public void execute(Memory memory, ProgramCounter pc) {
+	public <T> void execute(Memory memory, ProgramCounter pc) {
 		T word1, word2;
 		if (d1 instanceof Address) {
 			word1 = memory.getWord(d1).DATA;
