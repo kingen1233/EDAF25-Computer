@@ -1,5 +1,7 @@
 package instructions;
 
+import data.Memory;
+
 public class Print implements Instruction {
 
 	public Print() {
@@ -7,7 +9,7 @@ public class Print implements Instruction {
 	}
 
 	@Override
-	public void execute() {
+	public void execute(Memory memory, ProgramCounter pc) {
 		// TODO Auto-generated method stub
 
 	}

@@ -1,14 +1,17 @@
-package instructions;
+	package instructions;
+
+import data.Memory;
 
 public class Jump implements Instruction {
-
-	public Jump() {
-		// TODO Auto-generated constructor stub
+    private int index;
+	public Jump(int index) {
+		this.index = index;
 	}
 
 	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
+	public void execute(Memory memory, ProgramCounter pc) {
+          
+		pc = index;
 
 	}
 
