@@ -1,5 +1,6 @@
 	package instructions;
 
+import computer.ProgramCounter;
 import data.Memory;
 
 public class Jump implements Instruction {
@@ -11,7 +12,7 @@ public class Jump implements Instruction {
 	@Override
 	public void execute(Memory memory, ProgramCounter pc) {
           
-		pc = index;
+		pc.set(index);
 
 	}
 
