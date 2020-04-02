@@ -1,8 +1,6 @@
 package data;
 
 public abstract class Memory<T> {
-
-	public Memory() {
 		
 		private T[] memory;
 		
@@ -20,7 +18,5 @@ public abstract class Memory<T> {
 	    }
 		
 		
-		
-	}
 
 }
