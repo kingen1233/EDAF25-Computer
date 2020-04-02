@@ -3,7 +3,15 @@ package data;
 public class LongMemory extends Memory {
 
 	public LongMemory() {
-		// TODO Auto-generated constructor stub
+		
+		private Word[] memory;
+
+	    public LongMemory(long size) {
+	        memory = new Word[size];
+	        super(memory);
+	    }
+
+	    
 	}
 
 }
