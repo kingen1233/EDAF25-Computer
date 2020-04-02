@@ -1,10 +1,10 @@
 package instructions;
 
+import computer.ProgramCounter;
+import data.Memory;
+
 public interface Instruction {
-           
- 	List<Command> commandList = new ArrayList<Command>();
- 	
- 	
-	public void execute(); //Tror att denna ska vara void, ska eventuellt ha parametrar in
+  
+	public void execute(Memory memory, ProgramCounter pc);
 
 }
