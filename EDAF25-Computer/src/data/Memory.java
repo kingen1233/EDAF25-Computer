@@ -2,8 +2,18 @@ package data;
 
 public abstract class Memory<T> {
 
-	public Memory() {
-		// TODO Auto-generated constructor stub
+	private T [] memory;
+	
+	public Memory(T[] memory) {
+		this.memory = memory;
 	}
 
+	public T[] getWord() {
+		return this.memory;
+	}
+
+	public void setWord(T [] word) {
+		this.memory = word;
+	}
+	
 }
