@@ -1,10 +1,13 @@
 package data;
 
 public class Address extends Data {
-	
-	
-	public Address(long index) {
+
+	private int index;
+
+	public Address(int index) {
 		super(index);
+		this.index = index;
+		
 	}
 
 }
