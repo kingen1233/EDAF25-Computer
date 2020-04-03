@@ -1,25 +1,22 @@
 package instructions;
 
 import computer.ProgramCounter;
-import data.Address;
-import data.Data;
-import data.Memory;
+import data.*;
 
 public abstract class Instruction {
-	
-	public <T> T getData(Data d, Memory memory) {
-		
-		T temp;
-		
+
+	public Word getWord(Data d, Memory memory) {
+
+		Word temp;
+
 		if (d instanceof Address) {
-			temp = memory.getWord(d).DATA;
+			temp = memory.getWord((Address) d);
 		} 
 		else {
-			temp = d.DATA;
+			temp = (Word) d;
 		}
-		
-		return temp;		
+		return temp;
 	}
 
-	public abstract <T> void  execute(Memory memory, ProgramCounter pc);
+	public abstract <T> void execute(Memory memory, ProgramCounter pc);
 }
