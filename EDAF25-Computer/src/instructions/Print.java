@@ -15,7 +15,5 @@ public class Print extends Instruction {
 		Long word = getWord(d, memory).getData();
 		System.out.println(word);
 		pc.next();
-	  
 	}
-
 }
