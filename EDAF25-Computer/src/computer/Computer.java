@@ -12,17 +12,16 @@ public class Computer {
 	public Computer(Memory memory) {
 
 		this.memory = memory;
-
+		pc = new ProgramCounter();
 	}
-	
+
 	public void load(Program program) {
-		
+
 		this.program = program;
-		
 	}
 
 	public void run() {
-		
+
 		program.run(memory, pc);
 	}
 }

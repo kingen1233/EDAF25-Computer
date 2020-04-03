@@ -3,10 +3,12 @@ package instructions;
 import computer.ProgramCounter;
 import data.Address;
 import data.Data;
+import data.LongWord;
 import data.Memory;
 import data.Word;
 
 public class Add extends Instruction {
+
 	private Data d1, d2;
 	private Address a;
 
@@ -18,13 +20,12 @@ public class Add extends Instruction {
 
 	@Override
 	public <T> void execute(Memory memory, ProgramCounter pc) {
-		T word1 = getData(d1, memory);
-		T word2 = getData(d2, memory);
-		Word<T> newWord = new Word<T>(word1 + word2);
+
+		Long word1 = getWord(d1, memory).getData();
+		Long word2 = getWord(d2, memory).getData();
+		Word<T> newWord = new LongWord(word1 + word2);
 		memory.setWord(a, newWord);
-
 		pc.next();
-
 	}
 
 }

@@ -1,9 +1,7 @@
 package instructions;
 
 import computer.ProgramCounter;
-import data.Address;
-import data.Data;
-import data.Memory;
+import data.*;
 
 public class Print extends Instruction {
 	private Data d;
@@ -14,9 +12,8 @@ public class Print extends Instruction {
 
 	@Override
 	public <T> void execute(Memory memory, ProgramCounter pc) {
-		T word = getData(d, memory);
+		Long word = getWord(d, memory).getData();
 		System.out.println(word);
-	  
+		pc.next();
 	}
-
 }

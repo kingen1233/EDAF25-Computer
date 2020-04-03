@@ -4,6 +4,7 @@ import computer.ProgramCounter;
 import data.Address;
 import data.Data;
 import data.Memory;
+import data.Word;
 
 public class Copy extends Instruction {
 
@@ -18,9 +19,9 @@ public class Copy extends Instruction {
 	}
 
 	@Override
-	public <T> void execute(Memory memory, ProgramCounter pc) {
-		T word = getData(d, memory);
+	public void execute(Memory memory, ProgramCounter pc) {
 
+		Word word = getWord(d, memory);
 		memory.setWord(a, word);
 		pc.next();
 	}

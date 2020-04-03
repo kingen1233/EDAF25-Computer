@@ -1,13 +1,11 @@
 package data;
 
-public abstract class Word<T> extends Data {
+public abstract class Word<T> implements Data {
 
 	private T word;
 
-	public Word(T word) {
-		super(word);
+	protected Word(T word) {
 		this.word = word;
-		
 	}
 
 }
